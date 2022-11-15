@@ -3,3 +3,24 @@
   npm i express
    npm install --save-dev jest
    npm install --save pm2
+
+   *database*
+   docker run -it -e "POSTGRES_HOST_AUTH_METHOD=trust" -p 5432:5432 postgres
+   npm run migrate
+
+   docker build -t docker .
+   docker run -it -p 3000:3000 docker
+
+   *install dockerDesktop*
+   sudo apt install gnome-terminal
+   sudo apt remove docker-desktop
+   rm -r $HOME/.docker/desktop
+sudo rm /usr/local/bin/com.docker.cli
+sudo apt purge docker-desktop
+sudo apt-get update
+sudo apt-get install ./docker-desktop-<version>-<arch>.deb
+systemctl --user start docker-desktop
+
+
+*Inicie o Docker Compose e execute os testes*
+docker compose run docker npm test
