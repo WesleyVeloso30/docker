@@ -1,0 +1,5 @@
+ 
+  npm install --save pg sequelize
+  npm i express
+   npm install --save-dev jest
+   npm install --save pm2
